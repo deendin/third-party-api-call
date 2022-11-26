@@ -21,6 +21,16 @@ class UserController extends BaseJsonApiService
 
     public function all() : array
     {
-        return [];
+        $results = 12;
+        $perPage = 6;
+        $pages = ceil($results/$perPage);
+        $result = [];
+
+        for ($i=1; $i < $pages; $i++){
+            $data = $this->get("users?page=$i&per_page=$perPage");
+            $result = (new UserTransformer($data))->transform();
+        }
+
+        return $result;
     }
 }
