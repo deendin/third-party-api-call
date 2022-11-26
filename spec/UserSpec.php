@@ -25,7 +25,7 @@ describe('User Resource Spec', function() {
                     ]
             ];
 
-            $request = $user->show(5);
+            $request = $user->show(5)['data'];
             
             expect($request)->toBe($data);
         });

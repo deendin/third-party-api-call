@@ -12,6 +12,7 @@
         }
     },
     "require": {
-        "kahlan/kahlan": "^5.2"
+        "kahlan/kahlan": "^5.2",
+        "guzzlehttp/guzzle": "^7.5"
     }
 }
