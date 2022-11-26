@@ -10,5 +10,8 @@
         "psr-4": {
             "App\\": "src"
         }
+    },
+    "require": {
+        "kahlan/kahlan": "^5.2"
     }
 }
