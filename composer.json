@@ -1,0 +1,14 @@
+{
+    "name": "nurudeen/third_party_api_requests",
+    "description": "Third Party API request",
+    "authors": [
+        {
+            "name": "Nurudeen"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    }
+}
