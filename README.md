@@ -45,3 +45,4 @@ Create a Composer package that provides a service for retrieving users via a rem
 2. Add Github Action for PHP-CS-Fixer that will be triggered before commit or push. This will act like a pre-commit
 3. Possibly enforce Husky to automatically test and lint code before commit or push. This will be useful because explicitly running the test command won't be needed anymore.
 4. Add docker to dockerize the system. This will allow setting up the project to be seamless irrespective of the machine or system that it needs to be run on.
+5. Have the base API endpoint in a DOTenv file using php DOTENV.
