@@ -33,7 +33,7 @@ describe('User Resource Spec', function() {
         it('returns an empty object when a user is not found.', function() {
             $user = new UserController();
 
-            $request = $user->show(1000);
+            $request = $user->show(1000)['data'];
 
             expect($request)->toBe([]);
         });
@@ -41,10 +41,18 @@ describe('User Resource Spec', function() {
         it('returns status not found status code when user is not found.', function() {
             $user = new UserController();
 
-            $status = $user->show(10000);
+            // Since the api has max of 13 id's that can be fetched, so, an attempt to read fetch users from 13 and above should return 404.
+            $status = $user->show(mt_rand(13, 1000))['status'];
 
             expect($status)->toBe(404);
         });
 
+        it('returns users list.', function() {
+            $user = new UserController();
+
+            $status = $user->all()['status'];
+
+            expect($status)->toBe(200);
+        });
     });
 });
